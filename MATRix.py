@@ -39,15 +39,23 @@ def is_fraction(value):
 	else:
 		return False
 
+def handle_input(msg):
+	s = raw_input(msg)
+	numbers = s.split('/')
+	val = float(numbers[0])
+	for num in numbers[1:]:
+		val /= float(num)
+
+	return val
 
 #Matrix Single Operation
 def start():
 	
 	#Number to zero out
-	a = float(input("Input the number you wish to zero out (as written in the given matrix): "))
+	a = handle_input("Input the number you wish to zero out (as written in the given matrix): ")
 
 	#Pivot
-	b = float(input("Input the leading number, pivot (as written in the given matrix): "))
+	b = handle_input("Input the leading number, pivot (as written in the given matrix): ")
 
 	#A loop
 	done = False
@@ -67,10 +75,10 @@ def start():
 def sett_inn(a, b):
 
 	#Tallet som paavirkes
-	c = float(input("What number are you changing? "))
+	c = handle_input("What number are you changing? ")
 
 	#Tallet som paavirker
-	d = float(input("What number affects your operation? "))
+	d = handle_input("What number affects your operation? ")
 
 	print p
 	print "Sending assassin to kill: ",c, "according to: ",d," orders..."
