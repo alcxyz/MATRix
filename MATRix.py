@@ -6,7 +6,7 @@
 #
 #The MIT License (MIT)
 #
-#Copyright (c) 2015 alc.no		
+#Copyright (c) 2015 droydi		
 #
 #Thanks for the help guys!			
 #Share with care!				
@@ -66,10 +66,8 @@ def start():
 
 def sett_inn(a, b):
 
-	#Tallet som paavirkes
 	c = float(input("What number are you changing? "))
 
-	#Tallet som paavirker
 	d = float(input("What number affects your operation? "))
 
 	print p
