@@ -12,9 +12,10 @@
 #Share with care!				
 #################################
 
-import math
-import sys
+import sys, math
 from fractions import Fraction
+from decimal import Decimal
+
 
 #Math definitions
 e = math.e
@@ -31,7 +32,8 @@ log = math.log10
 
 done = 0
 
-p = "\n....................................."
+p = "\n"+"." * 30
+
 
 def is_fraction(value):
 	if value % 2 == 0 or (value+1) % 2 == 0:
@@ -42,9 +44,9 @@ def is_fraction(value):
 def handle_input(msg):
 	s = raw_input(msg)
 	numbers = s.split('/')
-	val = float(numbers[0])
+	val = Decimal(numbers[0])
 	for num in numbers[1:]:
-		val /= float(num)
+		val /= Decimal(num)
 
 	return val
 
@@ -63,7 +65,7 @@ def start():
 		print ("Let's work on the next number on this row.")
 		done = sett_inn(a, b)
 	
-	quit = str(raw_input("Wanna quit?" )).lower()
+	quit = str(raw_input("Wanna quit? ")).lower()
 
 	if quit == "y" or quit == "yes":
 		sys.exit("k, thx bye")
@@ -120,8 +122,9 @@ def ifdone(a,b,c,d):
 		print p
 
 
-print "Hi! This tool is a simple helper to speed up your matrix operations.\nJust follow the yellow brick road! Feedbacks are welcomed.\n.............................................."
+print "Hi! This tool is a simple helper to speed up your matrix operations."
+print "Just follow the yellow brick road! Feedbacks are welcomed."
+print p
 
 start()
-
 
